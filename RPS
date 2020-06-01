@@ -50,8 +50,6 @@ const computer = computerChooses();
 
 function throwRock(){
 	let useRock = document.getElementById('rock').innerText;
-	//console.log(useRock);
-	//result = document.querySelector('.result');
 	player = useRock;
 	console.log(typeof(player))
 	document.querySelector('.playerToken').innerHTML = 'Player:  ' + player;
@@ -62,8 +60,6 @@ document.getElementById('rock').onclick = throwRock;
 
 function throwPaper(){
 	let usePaper = document.getElementById('paper').innerText;
-	//console.log(useScissors);
-	//result = document.querySelector('.result');
 	player = usePaper;
 	console.log(typeof(player))
 	document.querySelector('.playerToken').innerHTML = 'Player:  ' + player;
@@ -80,31 +76,23 @@ function throwScissors(){
 	player = useScissors;
 	console.log(typeof(player))
 	document.querySelector('.playerToken').innerHTML = 'Player:  ' + player;
-	mainProgram()
+	mainProgram();
 }
 
 document.getElementById('scissors').onclick = throwScissors;
 
-//return(result);
-//console.log(result2);
-
-//playerAssign()
-//PROGRAM STARTS
 
 //The random index generated
 function computerChooses() {
 	randNum = Math.floor(Math.random() * thrownChoice.length);
-	//console.log(randNum)
 	return thrownChoice[randNum];
 }
 computerChooses();
 
 //Print the choices
-//console.log("Computer: " + computer + " | Human: " + player);
-
 document.querySelector('.computerToken').innerHTML = 'Computer:  ' + computer;
 document.querySelector('.playerToken').innerHTML = 'Player:  ' + player;
-//console.log(player)
+
 
 
 let flag = '';
@@ -142,6 +130,7 @@ else if (computer === thrownChoice[2]) {
 	}return (flag)
 }
 
+//Compare to see winner
 function mainProgram(){
 compareChoices(computer,player,thrownChoice);
 if (flag === 'win') {
