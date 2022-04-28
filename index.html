@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RPS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="rps.css">
+    </head>
+    <body>
+        <h1 id="Welcome">Welcome to Lapis, Papyrus, Scalpellus</br><div id="aka">(Also know as Rock, Paper, Scissors)</div>
+        </h1>
+
+        <h2>THE PLAYER CHOICE:</br>
+            <div id="rules" >The player will select their choice from the buttons below. <br />The computer will be chosen at random. Good Luck!</br>
+            </h2>
+            <div id="allButtons">
+               <div id="totalRock">
+        <img src="pics/transparent-rock-1.png" alt="rock">
+
+        <button id="rock" class="logChoice" >Lapis</button>
+    </div> 
+<div id="totalPaper">
+        <img src="pics/paper-png-transparent-19.png" alt="paper">
+        
+        <button id="paper" class="logChoice">Papyrus
+        </button>
+    </div>
+<div id="totalScissors">
+        <img src="pics/scissors-clipart-transparent-7.png" alt="scissors">
+        
+        <button id="scissors" class="logChoice">Scalpellus</button>
+</div>
+       </div>
+        <div id="results">
+            <div id="playerToken" class="playerToken token">
+            </div>
+        <div id="computerToken" class="computerToken token"></div>
+        
+            </br>
+        <div id="win"></div>
+        </div>
+        <script src="rps.js" async defer></script>
+    </body>
+</html>
+
