@@ -94,7 +94,7 @@ else if (computer === thrownChoice[2]) {
 function mainProgram(){
 compareChoices(computer,player,thrownChoice);
 if (flag === "win") {
-	document.("#win").innerHTML =  "Winner: The Computer";
+	document.querySelector("#win").innerHTML =  "Winner: The Computer";
 } else if (flag === "loss") {
 	document.querySelector("#win").innerHTML = "Winner: The Human";
 } else if (flag === "tie") {
