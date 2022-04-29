@@ -5,7 +5,8 @@ let player = " ";
 let computer = " ";
 let flag = " ";
 let winner = " "
-let score = 0;
+let pscore = 0;
+let cscore = 0;
 const win = document.querySelector("#win");
 win.innerHTML = "Winner: " ;
 
@@ -17,8 +18,8 @@ playerToken.innerHTML = "Human:  " + player;
 
 const playerScore = document.getElementById("playerScore");
 const compScore = document.getElementById("compScore");
-playerScore.innerHTML = "Score: " + score;
-compScore.innerHTML = "Score: " + score;
+playerScore.innerHTML = "Score: " + pscore;
+compScore.innerHTML = "Score: " + cscore;
 
 //Choose Rock
 const throwRock = ()=> {
@@ -115,11 +116,14 @@ const winCompare = ()=> {
 		break
 		case "loss":
 			winner = "Human"
+			pscore+=1
 		break
 		case "win":
 			winner = "Computer"
+			cscore+=1
 	}
-		return (win.innerHTML="Winner: "+ winner);
-	}
+	return ((win.innerHTML = "Winner: "+ winner),(playerScore.innerHTL = "Score: " + pscore), (compScore.innerHTML = "Score: "+cscore))
+}
+console.log(pscore,cscore)
 
 
