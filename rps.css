@@ -20,11 +20,9 @@ img {
     width: auto;
 }
 
-
-
 .logChoice {
     font-size: 90%;
-
+    
 }
 
 #rules {
@@ -34,4 +32,18 @@ img {
 .token {
     width: 5em;
     height: 5em;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+span {
+    display: flex;
+
+    justify-content: space-evenly;
 }

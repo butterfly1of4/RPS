@@ -5,7 +5,7 @@ let player = " ";
 let computer = " ";
 let flag = " ";
 let winner = " "
-
+let score = 0;
 const win = document.querySelector("#win");
 win.innerHTML = "Winner: " ;
 
@@ -14,6 +14,11 @@ computerToken.innerHTML = "Computer:  " + computer;
 
 const playerToken = document.querySelector(".playerToken");
 playerToken.innerHTML = "Human:  " + player;
+
+const playerScore = document.getElementById("playerScore");
+const compScore = document.getElementById("compScore");
+playerScore.innerHTML = "Score: " + score;
+compScore.innerHTML = "Score: " + score;
 
 //Choose Rock
 const throwRock = ()=> {
