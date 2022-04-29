@@ -1,104 +1,120 @@
 
 //THE PLAYERS
-
-//the player = the value of the button pressed
-const thrownChoice = ["Lapis", "Papyrus", "Scalpellus"];
+const RPS = ["Lapis", "Papyrus", "Scalpellus"];
 let player = " ";
+let computer = " ";
+let flag = " ";
+let winner = " "
 
-const computer = computerChooses();
+const win = document.querySelector("#win");
+win.innerHTML = "Winner: " ;
 
-let winner = " ";
+const computerToken = document.querySelector(".computerToken");
+computerToken.innerHTML = "Computer:  " + computer;
 
+const playerToken = document.querySelector(".playerToken");
+playerToken.innerHTML = "Human:  " + player;
 
-function throwRock(){
-	let useRock = document.getElementById("rock").innerText;
-	player = useRock;
-	// console.log(typeof(player))
-	document.querySelector(".playerToken").innerHTML = "Human:  " + player;
-	mainProgram()
+//Choose Rock
+const throwRock = ()=> {
+	player = RPS[0]
+	playerToken.innerHTML = "Human: " + player.toString();
+	winCompare()
+	return player
 }
-
 document.getElementById("rock").onclick = throwRock;
 
-function throwPaper(){
-	let usePaper = document.getElementById("paper").innerText;
-	player = usePaper;
-	// console.log(typeof(player))
-	document.querySelector(".playerToken").innerHTML = "Human:  " + player;
-	mainProgram()
+//Choose Paper
+const throwPaper = ()=> {
+	player = RPS[1]
+	playerToken.innerHTML = "Human: " + player.toString();
+	winCompare()
+	return player
 }
-
 document.getElementById("paper").onclick = throwPaper;
 
-
-function throwScissors(){
-	let useScissors = document.getElementById("scissors").innerText;
-	//console.log(useScissors);
-	//result = document.querySelector(".result");
-	player = useScissors;
-	// console.log(typeof(player))
-	document.querySelector(".playerToken").innerHTML = "Human:  " + player;
-	mainProgram();
+//Choose Scissors
+const throwScissors = ()=> {
+	player = RPS[2]
+	playerToken.innerHTML = "Human: " + player.toString();
+	winCompare()
+	return player
 }
-
 document.getElementById("scissors").onclick = throwScissors;
 
+//Reset all
+const reset = () => {
+	player = " "
+	computer = " "
+	playerToken.innerHTML = "Human: " + player;
+	computerToken.innerHTML = "Computer: " + computer;
+}
+document.getElementById("reset").onclick = reset;
 
 //The random index generated
-function computerChooses() {
-	randNum = Math.floor(Math.random() * thrownChoice.length);
-	return thrownChoice[randNum];
+const computerChooses = () => {
+	let randNum = Math.floor(Math.random() * RPS.length);
+	computer = RPS[randNum]
+	computerToken.innerHTML = "Computer: " + computer.toString();
+	return computer
 }
-computerChooses();
 
-//Print the choices
-document.querySelector(".computerToken").innerHTML = "Computer:  " + computer;
-document.querySelector(".playerToken").innerHTML = "Human:  " + player;
 
 //Comparison function
-let flag = "";
-function compareChoices(computer,player,thrownChoice){
-	//If the computer is Rock
-if (computer === thrownChoice[0]) {
-	if (player === thrownChoice[1]) {
-		flag = "loss";
-	} else if (player === thrownChoice[2]) {
-		flag ="win";
-	} else if (computer === player){
-		flag = "tie";
+
+
+//If the computer is Rock
+const compareChoices = () => {
+	// console.log(computer,player, flag)
+	if (computer===player){
+		flag= "tie"
 	}
+	if (computer === RPS[0]) {
+		if (player === RPS[1]) {
+			flag = "loss";
+	} 	
+		if (player === RPS[2]) {
+			flag ="win";
+	}   
 }
 //If the computer is Paper
-else if (computer === thrownChoice[1]) {
-	if (player === thrownChoice[0]) {
+else if (computer === RPS[1]) {
+	if (player === RPS[0]) {
 		flag = "win";
-	} else if (player === thrownChoice[2]) {
+	} 
+	if (player === RPS[2]) {
 		flag = "loss";
-	}else if (computer=== player){
-		flag = "tie";
 	}
-	}
+}
 //If the computer is Scissors
-else if (computer === thrownChoice[2]) {
-	if (player === thrownChoice[0]) {
+else if (computer === RPS[2]) {
+	if (player === RPS[0]) {
 		flag ="loss";
-	} else if (player === thrownChoice[1]) {
+	} 
+	if (player === RPS[1]) {
 		flag = "win";
-	} else if (computer === player){
-		flag = "tie";
+	} 
 	}
-	}return (flag)
+	return (flag, winner)	
 }
 
+
 //Compare to see winner
-function mainProgram(){
-compareChoices(computer,player,thrownChoice);
-if (flag === "win") {
-	document.querySelector("#win").innerHTML =  "Winner: The Computer";
-} else if (flag === "loss") {
-	document.querySelector("#win").innerHTML = "Winner: The Human";
-} else if (flag === "tie") {
-	document.querySelector("#win").innerHTML = "There was a tie";
-}
-}
+const winCompare = ()=> {
+	computerChooses()
+	compareChoices()
+
+	switch(flag){
+		case "tie":
+			winner = "Tie"
+		break
+		case "loss":
+			winner = "Human"
+		break
+		case "win":
+			winner = "Computer"
+	}
+		return (win.innerHTML="Winner: "+ winner);
+	}
+
 
