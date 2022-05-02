@@ -13,31 +13,38 @@
         <link rel="stylesheet" href="rps.css">
     </head>
     <body>
+        <div id="game">
+            <div id="top">
         <h1 id="Welcome">Welcome to Lapis, Papyrus, Scalpellus</br><div id="aka">(Also know as Rock, Paper, Scissors)</div>
         </h1>
 
         <h2>THE PLAYER CHOICE:</br>
-            <div id="rules" >The player will select their choice from the buttons below. <br />The computer will be chosen at random. Good Luck!</br>
-            </h2>
-            <div id="allButtons">
-               <div id="totalRock">
+            <div id="rules" >The player will select their choice from the buttons below. <br />The computer will be chosen at random.<br /> The rules are the same as traditional "Rock, Paper, Scissors":<br />
+                <ul>
+                    <li>Papyrus beats Lapis</li>
+                    <li>Scalpellus beats Papyus</li>
+                    <li>Lapis beats Scalpellus</li>
+                </ul> Good Luck!</div><hr />
+            </h2></div>
+            <div id="allButtons" class="results">
+               <div id="totalRock"  class="logChoice" >
         <img src="pics/transparent-rock-1.png" alt="rock">
 
-        <button id="rock" class="logChoice" >Lapis</button>
+        <button id="rock">Lapis</button>
     </div> 
-<div id="totalPaper">
+<div id="totalPaper"  class="logChoice" >
         <img src="pics/paper-png-transparent-19.png" alt="paper">
         
-        <button id="paper" class="logChoice">Papyrus
+        <button id="paper">Papyrus
         </button>
     </div>
-<div id="totalScissors">
+<div id="totalScissors"  class="logChoice" >
         <img src="pics/scissors-clipart-transparent-7.png" alt="scissors">
         
-        <button id="scissors" class="logChoice">Scalpellus</button>
+        <button id="scissors">Scalpellus</button>
 </div>
        </div><br />
-        <div id="results">
+        <div class="results">
         <span>
         <div id="playerToken" class="playerToken token"></div>
         <div id="playScore"></div>
@@ -46,10 +53,10 @@
         <div id="computerToken" class="computerToken token"></div>
         <div id="compScore"></div>
         </span>
-            </br>
-        <div id="win"></div><br />
+
+        <div id="win"></div>
         <button id="reset">Reset</button>
-        </div>
+        </div></div>
         <script src="rps.js" async defer></script>
     </body>
 </html>

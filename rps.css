@@ -1,48 +1,78 @@
 body {
     align-items: center;
-    background-color: lightblue;
+    background-image: linear-gradient(blue,lightblue);
     font-family: 'Cinzel', serif;
     display: flex;
     flex-direction: column;
+    
+}
+#game {
+    min-width: 50vw;
+}
+#top{
+    color: white;
+
+}
+h1 {
+    text-align: center;
+}
+#aka {
+    font-size: 80%;
+
 }
 #allButtons {
     display: flex;
     flex-direction: row;
+    /* justify-content: space-around; */
+    width: 70vw;
 }
 
 button {
     font-family: 'Cinzel',serif;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 20px 10px;
+    padding: 2px 1px;
+    width: 10em;    
 }
 
 img {
-    height: 5em;
+    max-height: 8em;
     width: auto;
+    margin: 2%;
 }
 
 .logChoice {
-    font-size: 90%;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 #rules {
     font-size: 70%;
+    padding-bottom: 2%;
+
 }
 
 .token {
-    width: 5em;
-    height: 5em;
+    /* width: 5em; */
+    height: 3em;
+    
 }
 
-#results {
+.results {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    /* width: 50vw; */
     justify-content: space-evenly;
-    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 20px;
+
 }
 
 span {
     display: flex;
     justify-content: space-evenly;
+    width: 50vw ;
+
 }

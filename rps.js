@@ -52,8 +52,12 @@ document.getElementById("scissors").onclick = throwScissors;
 const reset = () => {
 	player = " "
 	computer = " "
+	pscore = 0
+	cscore = 0
 	playerToken.innerHTML = "Human: " + player;
 	computerToken.innerHTML = "Computer: " + computer;
+	playScore.innerHTML = "Score: " + pscore;
+	compScore.innerHTML = "Score: " + cscore;
 }
 document.getElementById("reset").onclick = reset;
 
@@ -110,7 +114,6 @@ else if (computer === RPS[2]) {
 const winCompare = ()=> {
 	computerChooses()
 	compareChoices()
-	console.log(pscore,cscore)
 console.log(player,computer,winner)
 	switch(flag){
 		case "loss":
