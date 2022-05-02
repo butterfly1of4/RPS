@@ -16,9 +16,9 @@ computerToken.innerHTML = "Computer:  " + computer;
 const playerToken = document.querySelector(".playerToken");
 playerToken.innerHTML = "Human:  " + player;
 
-const playerScore = document.getElementById("playerScore");
+const playScore = document.getElementById("playScore");
 const compScore = document.getElementById("compScore");
-playerScore.innerHTML = "Score: " + pscore;
+playScore.innerHTML = "Score: " + pscore;
 compScore.innerHTML = "Score: " + cscore;
 
 //Choose Rock
@@ -75,6 +75,7 @@ const compareChoices = () => {
 	if (computer===player){
 		flag= "tie"
 	}
+//If the computer is Rock
 	if (computer === RPS[0]) {
 		if (player === RPS[1]) {
 			flag = "loss";
@@ -109,21 +110,27 @@ else if (computer === RPS[2]) {
 const winCompare = ()=> {
 	computerChooses()
 	compareChoices()
-
+	console.log(pscore,cscore)
+console.log(player,computer,winner)
 	switch(flag){
-		case "tie":
-			winner = "Tie"
-		break
 		case "loss":
 			winner = "Human"
 			pscore+=1
 		break
 		case "win":
 			winner = "Computer"
-			cscore+=1
+			cscore+=1 
+			break
+		case "tie":
+			winner = "Tie"
+
 	}
-	return ((win.innerHTML = "Winner: "+ winner),(playerScore.innerHTL = "Score: " + pscore), (compScore.innerHTML = "Score: "+cscore))
+	console.log(pscore,cscore,winner)
+return (	(win.innerHTML = "Winner: "+ winner),
+(playScore.innerHTML = "Score: " + pscore),
+(compScore.innerHTML = "Score: "+ cscore))
 }
-console.log(pscore,cscore)
+
+
 
 
